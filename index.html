@@ -1,13 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exam-repository</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCU Innovators hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">📊 UCU Innovators hub</h1>
+            <ul class="nav-menu">
+                <li><button class="nav-btn active" data-dashboard="counter"></button></li>
+                <li><button class="nav-btn" data-dashboard="stats">Statistics</button></li>
+                <li><button class="nav-btn" data-dashboard="multi">Multi-Counter</button></li>
+                <li><button class="nav-btn" data-dashboard="settings">Settings</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Counter Dashboard -->
+        <section id="counter-dashboard" class="dashboard active">
+            <div class="dashboard-header">
+                <h2>Main Counter</h2>
+                <p class="subtitle">Use the buttons below to control your counter</p>
+            </div>
+            <div class="counter-display">
+                <div class="counter-value" id="main-counter">0</div>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-decrease" id="decrease-btn">-</button>
+                <button class="btn btn-reset" id="reset-btn">Reset</button>
+                <button class="btn btn-increase" id="increase-btn">+</button>
+            </div>
+            <div class="increment-options">
+                <label>Increment by:</label>
+                <input type="number" id="increment-value" value="1" min="1">
+            </div>
+        </section>
+
+        <!-- Statistics Dashboard -->
+        <section id="stats-dashboard" class="dashboard">
+            <div class="dashboard-header">
+                <h2>Statistics</h2>
+                <p class="subtitle">View your counter statistics and history</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Current Value</div>
+                    <div class="stat-value" id="current-stat">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Increments</div>
+                    <div class="stat-value" id="total-increments">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Total Decrements</div>
+                    <div class="stat-value" id="total-decrements">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Highest Value</div>
+                    <div class="stat-value" id="highest-value">0</div>
+                </div>
+            </div>
+            <div class="history-section">
+                <h3>Recent Actions</h3>
+                <div class="history-list" id="history-list">
+                    <p class="empty-state">No actions yet. Start counting!</p>
+                </div>
+                <button class="btn btn-secondary" id="clear-history-btn">Clear History</button>
+            </div>
+        </section>
+
+        <!-- Multi-Counter Dashboard -->
+        <section id="multi-dashboard" class="dashboard">
+            <div class="dashboard-header">
+                <h2>Multi-Counter</h2>
+                <p class="subtitle">Create and manage multiple counters</p>
+            </div>
+            <div class="multi-counter-controls">
+                <input type="text" id="counter-name-input" placeholder="Enter counter name">
+                <button class="btn btn-primary" id="add-counter-btn">Add Counter</button>
+            </div>
+            <div class="multi-counters-container" id="multi-counters">
+                <p class="empty-state">No counters yet. Create one to get started!</p>
+            </div>
+        </section>
+
+        <!-- Settings Dashboard -->
+        <section id="settings-dashboard" class="dashboard">
+            <div class="dashboard-header">
+                <h2>Settings</h2>
+                <p class="subtitle">Customize your counter app</p>
+            </div>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="theme-select">Theme</label>
+                    <select id="theme-select" class="setting-input">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="counter-color">Counter Display Color</label>
+                    <input type="color" id="counter-color" class="setting-input" value="#6366f1">
+                </div>
+                <div class="setting-item">
+                    <label for="sound-toggle">
+                        <input type="checkbox" id="sound-toggle" class="setting-checkbox">
+                        Enable Sound Effects
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label for="auto-save-toggle">
+                        <input type="checkbox" id="auto-save-toggle" class="setting-checkbox" checked>
+                        Auto-save to Local Storage
+                    </label>
+                </div>
+            </div>
+            <div class="settings-actions">
+                <button class="btn btn-secondary" id="reset-settings-btn">Reset to Defaults</button>
+                <button class="btn btn-danger" id="clear-all-btn">Clear All Data</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
 </html>
+
