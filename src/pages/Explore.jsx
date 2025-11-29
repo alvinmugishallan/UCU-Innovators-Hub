@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectList from '../components/Projects/ProjectList';
+import PublicDashboard from '../components/Dashboard/PublicDashboard';
 
 const Explore = () => {
     return (
@@ -8,6 +9,7 @@ const Explore = () => {
                 <h1 style={{ color: 'var(--color-primary)', marginBottom: '0.5rem' }}>Explore Projects</h1>
                 <p style={{ color: 'var(--color-text-muted)' }}>Discover groundbreaking innovations from UCU students.</p>
             </div>
+            <PublicDashboard />
             <ProjectList />
         </div>
     );
