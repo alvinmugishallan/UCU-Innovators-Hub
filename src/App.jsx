@@ -5,13 +5,14 @@ import Home from './pages/Home';
 import Explore from './pages/Explore';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import PublicDashboard from './pages/PublicDashboard';
 
 import DashboardLayout from './components/Layout/DashboardLayout';
 import Dashboard from './pages/Dashboard';
 
 import { AuthProvider } from './context/AuthContext';
 
-import ProjectDetails from './components/Projects/ProjectDetails';
+import ProjectDetail from './pages/ProjectDetail';
 import ProjectSubmissionForm from './components/Projects/ProjectSubmissionForm';
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="explore" element={<Explore />} />
-            <Route path="projects/:id" element={<ProjectDetails />} />
+            <Route path="public-dashboard" element={<PublicDashboard />} />
+            <Route path="projects/:id" element={<ProjectDetail />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
           </Route>
